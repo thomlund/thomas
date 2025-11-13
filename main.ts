@@ -1,6 +1,9 @@
 namespace SpriteKind {
     export const tree = SpriteKind.create()
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.tree, function (sprite, otherSprite) {
+	
+})
 sprites.onCreated(SpriteKind.tree, function (sprite) {
     sprite.setPosition(randint(130, 880), randint(60, 900))
 })
@@ -23,7 +26,7 @@ let mySprite = sprites.create(img`
     . . . . . f f f f f f . . . . . 
     . . . . . f f . . f f . . . . . 
     `, SpriteKind.Player)
-for (let index = 0; index < 200; index++) {
+for (let index = 0; index < 300; index++) {
     træ = sprites.create(img`
         ......cc66......
         .....c6576c.....
@@ -71,7 +74,6 @@ let bål = sprites.create(img`
     `, SpriteKind.Projectile)
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
-træ.setPosition(143, 6)
 bål.setPosition(27, 32)
 tiles.setCurrentTilemap(tilemap`level1`)
 animation.runImageAnimation(
@@ -148,6 +150,9 @@ mySprite,
 100,
 true
 )
+forever(function () {
+	
+})
 forever(function () {
     console.logValue("x", scene.cameraProperty(CameraProperty.X))
     console.logValue("y", scene.cameraProperty(CameraProperty.Y))
